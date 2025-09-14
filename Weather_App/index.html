@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Weather App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide-icons"></script>
+</head>
+<body>
+  <main class="weather-container" role="main">
+    <h1>🌤 Live Weather</h1>
+
+    <section id="weather">
+      <p id="status" aria-live="polite">Getting your location...</p>
+
+      <div id="weather-info" class="hidden" aria-live="polite" aria-atomic="true">
+        <!-- Current Weather -->
+        <div class="current-weather card">
+          <div class="weather-icon">
+            <i id="weather-icon" data-lucide="cloud-sun"></i>
+          </div>
+          <div class="weather-details">
+            <h2 id="location" tabindex="0">Loading location...</h2>
+            <p id="temp" class="temperature"></p>
+            <p id="description" class="condition"></p>
+          </div>
+        </div>
+
+        <div class="extra-info">
+          <div class="info-card"><strong>🌡 Min/Max:</strong> <span id="minmax"></span></div>
+          <div class="info-card"><strong>💧 Humidity:</strong> <span id="humidity"></span></div>
+          <div class="info-card"><strong>💨 Wind:</strong> <span id="wind"></span></div>
+          <div class="info-card"><strong>☁️ Clouds:</strong> <span id="clouds"></span></div>
+          <div class="info-card"><strong>👀 Visibility:</strong> <span id="visibility"></span></div>
+          <div class="info-card"><strong>🧭 Pressure:</strong> <span id="pressure"></span></div>
+          <div class="info-card"><strong>🌅 Sunrise:</strong> <span id="sunrise"></span></div>
+          <div class="info-card"><strong>🌇 Sunset:</strong> <span id="sunset"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Action Buttons -->
+    <div class="actions">
+      <button id="refresh-btn" aria-label="Refresh weather data">🔄 Refresh</button>
+      <button id="unit-btn" aria-label="Toggle temperature unit">🌡 Switch °C/°F</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
